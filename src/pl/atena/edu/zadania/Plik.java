@@ -2,22 +2,21 @@ package pl.atena.edu.zadania;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.ArrayList;
-import java.util.List;
 import java.util.Scanner;
 import java.util.logging.Logger;
 
-public class PrzeszukiwaniePliku {
+public class Plik {
 	
 	protected Logger logger = Logger.getGlobal();
-
-	public void main(String[] args) {
+	
+	public void Wczytaj() {
 		try {
-		File file = new File("E:\\Dokumenty\\edu\\javka\\Zadania\\doc.txt");
+		File file = new File("E:\\Dokumenty\\edu\\javka\\Zadania\\dok.txt");
 		Scanner sc = new Scanner(file);
 		
 		while (sc.hasNextLine()) {
 			String line = sc.nextLine();
+			System.out.println(line);
 			przetwarzajLinie(line);
 			
 		}
@@ -28,9 +27,11 @@ public class PrzeszukiwaniePliku {
 		
 		
 	}
-	private void przetwarzajLinie(String line) {
-		List<String> lista = new ArrayList<>();
-	}
-	
 
+public void przetwarzajLinie(String line) {
+	String[] lista;
+	lista = line.split(" ");
+	System.out.println(lista);
+	//Map<String, Int> zliczanie = new HashMap<>();
+}
 }

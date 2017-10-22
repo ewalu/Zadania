@@ -11,7 +11,7 @@ import pl.atena.edu.zadania.Rodzaj;
 import pl.atena.edu.zadania.Towar;
 
 
-public class Filtr {
+public class Kolekcje {
 	
 	public static void main(String[] args) {
 	List<String> lista = new ArrayList<>();
@@ -19,7 +19,7 @@ public class Filtr {
 	lista.add("Jan");
 	lista.add("azor");
 	
-	System.out.println(lista);
+	//System.out.println(lista);
 	
 	final List<String> result = new ArrayList<>();
 	
@@ -29,11 +29,11 @@ public class Filtr {
 		}
 	});
 	
-	System.out.println(result);
+	//System.out.println(result);
 	
 	lista.removeIf(item->"A".equals(item.substring(0,1).toUpperCase()));
 	
-	System.out.println(lista);
+	//System.out.println(lista);
 	
 	Map<Rodzaj, Towar> towary = new HashMap<>();
 	Towar Piwko = new Towar(Rodzaj.PIWO, true, BigDecimal.valueOf(1.9), 90);
@@ -46,10 +46,8 @@ public class Filtr {
 	//lista1.add("A");
 	
 	
-	
-	
-	
-	
+	Plik plik = new Plik();
+	plik.Wczytaj();
 	
 	}
 
