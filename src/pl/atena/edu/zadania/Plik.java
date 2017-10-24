@@ -19,10 +19,6 @@ public class Plik {
 		
 		while (sc.hasNextLine()) {
 			String line = sc.nextLine();
-			//usuniecie przecinków i kropek
-			line = line.replace(",", "");
-			line = line.replace(".", "");
-			//System.out.println(line);
 			lista = przetwarzajLinie(line);
 			zliczanie = zliczaj(zliczanie, lista);
 			
@@ -34,17 +30,17 @@ public class Plik {
 		zliczanie.entrySet().forEach(item-> System.out.println(item));
 
 	}
-//zliczanie s³ów
+//zliczanie sï¿½ï¿½w
 public Map<String, Integer> zliczaj(Map<String, Integer> licznik, String[] lista) {
 	for (int i = 0; i<lista.length; i++) {
 		licznik.merge(lista[i], 1, Integer::sum);
 	}
 	return licznik;
 }
-//funkcja dzieli stringa na tablicê stringów
+//funkcja dzieli stringa na tablicï¿½ stringï¿½w
 public String[] przetwarzajLinie(String line) {
 	String[] lista;
-	lista = line.split(" ");
+	lista = line.split("\\s");
 	return lista;
 }
 }
