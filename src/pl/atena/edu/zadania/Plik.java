@@ -31,9 +31,8 @@ public class Plik {
 		} catch (FileNotFoundException e) {
 			logger.throwing("PrzeszukiwaniePliku","wczytajPlik", e);
 		}
-		System.out.println(zliczanie);
-		
-		
+		zliczanie.entrySet().forEach(item-> System.out.println(item));
+
 	}
 //zliczanie s³ów
 public Map<String, Integer> zliczaj(Map<String, Integer> licznik, String[] lista) {
