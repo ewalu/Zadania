@@ -1,5 +1,6 @@
 package pl.atena.edu.zadania;
 
+import java.io.File;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -45,9 +46,9 @@ public class Kolekcje {
 	List<String> lista1 = Arrays.asList(test);
 	//lista1.add("A");
 	
-	
+	File file = new File("E:\\Dokumenty\\edu\\javka\\Zadania\\dok.txt");
 	Plik plik = new Plik();
-	plik.Wczytaj();
+	plik.Wczytaj(file);
 	
 	}
 
