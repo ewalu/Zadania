@@ -2,12 +2,12 @@ package pl.atena.edu.zadania;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.Arrays;
-import java.util.Collection;
-import java.util.HashMap;
+import java.util.ArrayList;
+import java.util.Comparator;
+import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 import java.util.Scanner;
-import java.util.TreeMap;
 import java.util.logging.Logger;
 
 public class Plik {
@@ -15,7 +15,7 @@ public class Plik {
 	protected Logger logger = Logger.getGlobal();
 	
 	public void Wczytaj(File file) {
-		Map<String, Integer> zliczanie = new TreeMap<>();
+		LinkedHashMap<String, Integer> zliczanie = new LinkedHashMap<>();
 		String[] lista;
 		try {
 		Scanner sc = new Scanner(file);
@@ -32,11 +32,11 @@ public class Plik {
 		} catch (FileNotFoundException e) {
 			logger.throwing("PrzeszukiwaniePliku","wczytajPlik", e);
 		}
-		zliczanie.entrySet().forEach(item-> System.out.println(item));
+		sortuj(zliczanie);
 
 	}
 //zliczanie 
-public Map<String, Integer> zliczaj(Map<String, Integer> licznik, String[] lista) {
+private LinkedHashMap<String, Integer> zliczaj(LinkedHashMap<String, Integer> licznik, String[] lista) {
 	for (int i = 0; i<lista.length; i++) {
 		//System.out.println(lista[i]);
 		licznik.merge(lista[i], 1, Integer::sum);
@@ -44,9 +44,18 @@ public Map<String, Integer> zliczaj(Map<String, Integer> licznik, String[] lista
 	return licznik;
 }
 //funkcja dzieli stringa na tablicę stringów
-public String[] przetwarzajLinie(String line) {
+private String[] przetwarzajLinie(String line) {
 	String[] lista;
 	lista = line.split(" ");
 	return lista;
+}
+private void sortuj(Map<String, Integer> zliczanie) {
+	List<Map.Entry<String, Integer>> lista = new ArrayList<Map.Entry<String, Integer>>(zliczanie.entrySet());
+	lista.sort(new Comparator<Map.Entry<String, Integer>>() {
+		public int compare(Map.Entry<String, Integer> o1, Map.Entry<String, Integer> o2) {
+			return (o1.getValue()).compareTo(o2.getValue());
+		}
+	});
+	lista.forEach(item-> System.out.println(item));
 }
 }
