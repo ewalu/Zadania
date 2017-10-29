@@ -4,6 +4,7 @@ import java.io.File;
 import java.io.FileNotFoundException;
 import java.util.ArrayList;
 import java.util.Comparator;
+import java.util.HashMap;
 import java.util.LinkedHashMap;
 import java.util.List;
 import java.util.Map;
@@ -15,7 +16,7 @@ public class Plik {
 	protected Logger logger = Logger.getGlobal();
 	
 	public void Wczytaj(File file) {
-		LinkedHashMap<String, Integer> zliczanie = new LinkedHashMap<>();
+		Map<String, Integer> zliczanie = new HashMap<>();
 		String[] lista;
 		try {
 		Scanner sc = new Scanner(file);
@@ -25,7 +26,7 @@ public class Plik {
 			line = line.toLowerCase();
 			line = line.replaceAll("[.,—„”!?]","");
 			lista = przetwarzajLinie(line);
-			zliczanie = zliczaj(zliczanie, lista);
+			zliczaj(zliczanie, lista);
 			
 		}
 		sc.close();
@@ -36,12 +37,10 @@ public class Plik {
 
 	}
 //zliczanie 
-private LinkedHashMap<String, Integer> zliczaj(LinkedHashMap<String, Integer> licznik, String[] lista) {
+private void zliczaj(Map<String, Integer> licznik, String[] lista) {
 	for (int i = 0; i<lista.length; i++) {
-		//System.out.println(lista[i]);
 		licznik.merge(lista[i], 1, Integer::sum);
 	}
-	return licznik;
 }
 //funkcja dzieli stringa na tablicę stringów
 private String[] przetwarzajLinie(String line) {
