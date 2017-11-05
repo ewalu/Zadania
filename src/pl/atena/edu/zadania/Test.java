@@ -38,6 +38,17 @@ public class Test {
 		generyki.filtruj(l1, pre);
 		
 		generyki.iDiki(l2);
+		
+		Table<Integer, String> table = new Table<>();
+		table.add(new Entry<>(1,"ewa1"));
+		table.add(new Entry<>(2,"ewa2"));
+		table.add(new Entry<>(3,"ewa3"));
+		table.prezentuj();
+		table.remove(1);
+		table.remove1(2);
+		table.prezentuj();
+		System.out.println(table.get(3).toString());
+		//System.out.println(table.get(1).toString());
 
 	}
 
