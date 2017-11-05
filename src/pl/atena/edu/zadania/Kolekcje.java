@@ -3,13 +3,10 @@ package pl.atena.edu.zadania;
 import java.io.File;
 import java.math.BigDecimal;
 import java.util.ArrayList;
-import java.util.Arrays;
+//import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-
-import pl.atena.edu.zadania.Rodzaj;
-import pl.atena.edu.zadania.Towar;
 
 
 public class Kolekcje {
@@ -42,8 +39,8 @@ public class Kolekcje {
 	towary.put(Piwko.rodzaj(), Piwko);
 	towary.put(Szlugi.rodzaj(), Szlugi);
 	
-	String test[] = {"E","W"};
-	List<String> lista1 = Arrays.asList(test);
+	//String test[] = {"E","W"};
+	//List<String> lista1 = Arrays.asList(test);
 	//lista1.add("A");
 	
 	File file = new File("C:\\Users\\ewalu1\\Desktop\\dok.txt");
