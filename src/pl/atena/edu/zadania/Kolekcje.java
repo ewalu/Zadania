@@ -46,7 +46,7 @@ public class Kolekcje {
 	List<String> lista1 = Arrays.asList(test);
 	//lista1.add("A");
 	
-	File file = new File("E:\\Dokumenty\\edu\\javka\\Zadania\\dok.txt");
+	File file = new File("C:\\Users\\ewalu1\\Desktop\\dok.txt");
 	Plik plik = new Plik();
 	plik.Wczytaj(file);
 	
