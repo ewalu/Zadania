@@ -1,14 +1,37 @@
 package pl.atena.edu.zadania;
 
+import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Objects;
+import java.util.function.Consumer;
 
 public class Lambda {
+	
+	public static void zadanie(List<Towar> towary, Consumer<Towar> consumer) {
+		towary.forEach(consumer::accept);
+	};
 
 	public static void main(String[] args) {
+		
+		Consumer<Towar> wyswietl = item -> {
+			StringBuffer sb = new StringBuffer();
+			sb.append(item.getRodzaj()).append(" ").append(item.getIlosc()).append(" ").append(item.getCena());
+			System.out.println(sb.toString());
+		};
+		
+		List<Towar> towary = new ArrayList<>();
+		
+		towary.add(new Towar(Rodzaj.PIWO, true, BigDecimal.valueOf(1.99), 1));
+		towary.add(new Towar(Rodzaj.BANAN, false, BigDecimal.valueOf(2.99), 2));
+		
+		zadanie(towary, wyswietl);
+		zadanie(towary, item -> item.zerujIlosc());
+		
+		zadanie(towary, wyswietl);
+		
 		String[] tab = {"b","bbbb", "aaaaa","aa","aaaaaaaaaa"};
 		List<String> lista = new ArrayList<>();
 		

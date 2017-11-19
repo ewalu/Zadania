@@ -51,4 +51,60 @@ public class Towar implements ITowar {
 		return this.uzywka;
 	}
 
+	/**
+	 * @return the rodzaj
+	 */
+	public Rodzaj getRodzaj() {
+		return rodzaj;
+	}
+
+	/**
+	 * @param rodzaj the rodzaj to set
+	 */
+	public void setRodzaj(Rodzaj rodzaj) {
+		this.rodzaj = rodzaj;
+	}
+
+	/**
+	 * @return the ilosc
+	 */
+	public int getIlosc() {
+		return ilosc;
+	}
+
+	/**
+	 * @param ilosc the ilosc to set
+	 */
+	public void setIlosc(int ilosc) {
+		this.ilosc = ilosc;
+	}
+
+	/**
+	 * @return the cena
+	 */
+	public BigDecimal getCena() {
+		return cena;
+	}
+
+	/**
+	 * @param cena the cena to set
+	 */
+	public void setCena(BigDecimal cena) {
+		this.cena = cena;
+	}
+
+	/**
+	 * @return the uzywka
+	 */
+	public boolean isUzywka() {
+		return uzywka;
+	}
+
+	/**
+	 * @param uzywka the uzywka to set
+	 */
+	public void setUzywka(boolean uzywka) {
+		this.uzywka = uzywka;
+	}
+
 }
