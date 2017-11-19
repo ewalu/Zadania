@@ -26,7 +26,7 @@ public class Data {
 		ZonedDateTime zdt = ZonedDateTime.now();
 		
 		LocalDate st = LocalDate.of(1901, Month.JANUARY, 13);
-		LocalDate kn = LocalDate.of(2000, Month.DECEMBER, 14);
+		LocalDate kn = LocalDate.of(2000, Month.DECEMBER, 31);
 		
 		//LocalDate st2 = st.plusMonths(1);
 		System.out.println(st.getDayOfWeek());
