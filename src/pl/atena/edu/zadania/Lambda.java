@@ -33,8 +33,8 @@ public class Lambda {
 		
 		towary.add(new Towar(Rodzaj.PIWO, true, BigDecimal.valueOf(4.99), 1));
 		towary.add(new Towar(Rodzaj.BANAN, false, BigDecimal.valueOf(2.99), 2));
-		towary.add(new Towar(Rodzaj.FAJKI, false, BigDecimal.valueOf(1.99), 2));
-		towary.add(new Towar(Rodzaj.JABLKO, false, BigDecimal.valueOf(1.98), 2));
+		towary.add(new Towar(Rodzaj.FAJKI, false, BigDecimal.valueOf(1.99), 1));
+		towary.add(new Towar(Rodzaj.JABLKO, false, BigDecimal.valueOf(1.98), 3));
 		towary.add(new Towar(Rodzaj.FAJKI, false, BigDecimal.valueOf(1.98), 2));
 		
 		zadanie(towary, wyswietl);
